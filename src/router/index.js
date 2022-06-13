@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import LoginAdminView from '../views/AdminView.vue'
+import CreateAdminView from '../views/CreateAdmin.vue'
+import ViewAdminView from '../views/ViewAdmin.vue'
+import MemberView from '../views/MemberView.vue'
+import MembersView from '../views/MembersView.vue'
+import CreateMemberView from '../views/CreateMember.vue'
 
 Vue.use(VueRouter)
 
@@ -11,13 +17,35 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/login_admin',
+    name: 'login_admin',
+    component: LoginAdminView
+  },
+  {
+    path: '/view_admin',
+    name: 'view_admin',
+    component: ViewAdminView
+  },
+  {
+    path: '/create_admin',
+    name: 'create_admin',
+    component: CreateAdminView
+  },
+  {
+    path: '/member_login',
+    name: 'member_login',
+    component: MemberView
+  },
+  {
+    path: '/view_member',
+    name: 'view_member',
+    component: MembersView
+  },
+  {
+    path: '/create_member',
+    name: 'create_member',
+    component: CreateMemberView
+  },
 ]
 
 const router = new VueRouter({
